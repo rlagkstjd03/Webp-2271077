@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localhost</title>
+    <style>
+        .image-container {
+            width: 400px;
+            height: 400px;
+            background-image: url('c:/Users/boy-1/OneDrive/바탕 화면/images/mango.jpeg');
+            background-size: cover;
+            background-position: center;
+            transition: background-image 0.5s ease;
+        }
+
+        .image-container:hover {
+            background-image: url('c:/Users/boy-1/OneDrive/바탕 화면/images/apple.jpeg');
+        }
+    </style>
+</head>
+<body>
+    <h3>:hover 활용</h3>
+    <hr>
+
+    <div>마우스를 올리면 앞면이 보인다
+        <div class="image-container"></div>
+    </div>
+</body>
+</html>
