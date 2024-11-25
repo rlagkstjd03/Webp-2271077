@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tooltip {
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            visibility: hidden; /* 초기에는 숨김 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    </style>
+    <script>
+        function showTooltip(event, text) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = text; // 텍스트 설정
+            tooltip.style.left = event.pageX + 10 + 'px'; // 마우스 위치 기준으로 배치
+            tooltip.style.top = event.pageY + 10 + 'px';
+            tooltip.style.visibility = 'visible'; // 보이게 설정
+        }
+
+        function hideTooltip() {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.style.visibility = 'hidden'; // 숨김 설정
+        }
+    </script>
+</head>
+<body>
+    <h3>아이템 위에 마우스를 올리면 설명이 나타납니다</h3>
+    <hr>
+    <p>여름 방학 때 하고 싶은 것들</p>
+    <ul>
+        <li onmouseover="showTooltip(event, '자전거를 타고 전국의 명소를 탐험합니다.')" 
+            onmouseout="hideTooltip()">자전거로 대한민국 일주</li>
+        <li onmouseover="showTooltip(event, '다양한 분야의 책을 읽고 지식을 넓힙니다.')" 
+            onmouseout="hideTooltip()">책 100권 읽기</li>
+        <li onmouseover="showTooltip(event, '수영, 사이클, 달리기를 연습합니다.')" 
+            onmouseout="hideTooltip()">철인 3종 경기 준비</li>
+        <li onmouseover="showTooltip(event, '심화 내용을 배우고 프로젝트에 적용합니다.')" 
+            onmouseout="hideTooltip()">자바스크립트 정복</li>
+    </ul>
+
+    <!-- Tooltip을 표시할 <div> -->
+    <div id="tooltip"></div>
+</body>
+</html>

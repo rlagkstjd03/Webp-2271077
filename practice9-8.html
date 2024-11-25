@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeFont(event) {
+            const item = event.target; // 클릭한 <li> 요소
+            const currentFontSize = window.getComputedStyle(item).fontSize; // 현재 글자 크기 가져오기
+            const newFontSize = parseFloat(currentFontSize) * 1.3; // 1.3배로 계산
+            item.style.fontSize = newFontSize + 'px'; // 새로운 크기 적용
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('li');
+            items.forEach(item => {
+                item.addEventListener('click', changeFont); // <li>에 클릭 이벤트 추가
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>아이템을 클릭하면 1.3배 크기로</h3>
+    <hr>
+    <p>여름 방학 때 하고 싶은 것들</p>
+    <ul>
+        <li>자전거로 대한민국 일주</li>
+        <li>책 100권 읽기</li>
+        <li>철인 3종 경기 준비</li>
+        <li>자바스크립트 정복</li>
+    </ul>
+</body>
+</html>
