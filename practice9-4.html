@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Tracker with Image Cursor</title>
+    <style>
+        body {
+            height: 100vh;
+            position: relative; /* 부모 요소에 상대 위치 설정 */
+            background-color: #f0f0f0;
+        }
+
+        #follower {
+            width: 50px; /* 이미지 크기 조정 */
+            height: 50px;
+            background-image: url('c:/Users/boy-1/OneDrive/바탕 화면/images/apple.jpeg'); /* 사용할 이미지 URL */
+            background-size: cover; /* 이미지가 div를 꽉 채우도록 */
+            position: absolute; /* 절대 위치 설정 */
+            pointer-events: none; /* 요소가 클릭 이벤트를 받지 않도록 */
+            transition: transform 0.1s; /* 부드러운 이동 효과 */
+            transform: translate(-50%, -50%); /* 이미지가 마우스 중앙에 오도록 이동 */
+        }
+    </style>
+</head>
+<body>
+    <div id="follower"></div> <!-- 마우스에 따라 움직일 요소 -->
+
+    <script>
+        document.onmousemove = function(event) {
+            // 마우스의 X, Y 좌표를 가져옵니다.
+            const x = event.clientX;
+            const y = event.clientY;
+
+            // follower 요소를 찾아서 위치를 설정합니다.
+            const follower = document.getElementById('follower');
+            follower.style.transform = `translate(${x}px, ${y}px)`; // X, Y 좌표에 따라 이동
+        };
+
+        // 커서 이미지를 설정
+        document.body.style.cursor = 'url(c:/Users/boy-1/OneDrive/바탕 화면/images/apple.jpeg), auto'; // 이미지 커서 설정
+    </script>
+</body>
+</html>

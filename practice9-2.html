@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showImage() {
+            let fruit = document.querySelector('input[name="fruit"]:checked').value;
+            let imgArea = document.getElementById("imageArea");
+            let imgSrc = "";
+            if (fruit === "banana") {
+                imgSrc = "c:/Users/boy-1/OneDrive/바탕 화면/images/banana.jpeg"; 
+            } 
+            else if (fruit === "apple") {
+                imgSrc = "c:/Users/boy-1/OneDrive/바탕 화면/images/apple.jpeg"; 
+            } 
+            else if (fruit === "mango") {
+                imgSrc = "c:/Users/boy-1/OneDrive/바탕 화면/images/mango.jpeg"; 
+            }
+
+            
+            imgArea.innerHTML = "<img src='" + imgSrc + "' alt='" + fruit + "'>";
+        }
+    </script>
+</head>
+<body>
+    <h3>라디오 버튼을 클릭하면 이미지를 출력합니다.</h3>
+    <hr>
+    <input type="radio" name="fruit" value="banana" onclick="showImage()">바나나
+    <input type="radio" name="fruit" value="apple" onclick="showImage()">사과
+    <input type="radio" name="fruit" value="mango" onclick="showImage()">망고
+
+    <hr>
+
+    <div id="imageArea"></div>
+
+</body>
+</html>

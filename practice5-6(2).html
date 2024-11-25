@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양쪽으로 번갈아 회전하는 이미지</title>
+    <style>
+        .moveImage {
+            background-image: url('c:/Users/boy-1/OneDrive/바탕 화면/images/banana.jpeg'); /* 이미지 상대 경로 */
+            background-size: cover;
+            background-position: center;
+            width: 400px;
+            height: 300px;
+            transition: background-image 0.3s;
+        }
+
+        /* 좌우로 90도씩 번갈아 회전하는 애니메이션 */
+        @keyframes alternateRotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-90deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* 무한 반복 회전 */
+        .moveImage:hover {
+            animation: alternateRotate 2s ease-in-out infinite; /* 2초에 한 번씩 번갈아 회전 */
+        }
+    </style>
+</head>
+<body>
+    <div class="moveImage"></div>
+</body>
+</html>

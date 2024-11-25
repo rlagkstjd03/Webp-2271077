@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            transition: transform 0.5s ease; /* 회전이 부드럽게 적용되도록 애니메이션 추가 */
+        }
+    </style>
+    <script>
+    let scale =1;
+        function widthChange(){
+            
+            let obj = document.getElementById("Myimg");
+            scale+=1;
+            obj.style.transform="scale("+scale+")";
+        }
+    </script>
+</head>
+<body>
+    <img id="Myimg" src="c:\Users\boy-1\OneDrive\바탕 화면\images\apple.jpeg" alt="apple" onclick="widthChange()">
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Color on Double Click</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <h3>바탕 아무 곳이나 더블클릭</h3>
+    <script>
+        // 랜덤 RGB 색상을 생성하는 함수
+        function getRandomColor() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r},${g},${b})`;
+        }
+
+        // 더블클릭 이벤트 리스너를 body에 추가
+        document.body.addEventListener("dblclick", function () {
+            document.body.style.backgroundColor = getRandomColor();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mySpan(){
+            let span = document.getElementById("mySpan");
+            span.style.border = "2px dotted violet";
+            span.style.padding = "2px";
+        }
+
+        function showP(){
+            let pTags = document.getElementsByTagName("P");
+            alert("<p> 태그의 개수는 " + pTags.length + "개입니다.");
+        }
+    </script>
+</head>
+<body>
+    <h3>
+        자바스크립트
+        <button onclick="mySpan()">border</button>
+        <button onclick="showP()">p</button>
+    </h3>
+    
+    <hr>
+
+    <p>뭔가 한다 ㅇㅇ</p>
+    <p><span id="mySpan">C언어</span>를 아는 사용자는 머시깽이</p>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calculate(){
+            let exp = document.getElementById("exp");
+            let result = document.getElementById("result");
+            result.value=eval(exp.value);
+        }
+
+        function setup() {
+            let exp = document.getElementById("exp");
+            exp.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") { 
+                    event.preventDefault(); 
+                    calculate();
+                }
+            });
+        }
+
+        window.onload = setup;
+    </script>
+</head>
+<body>
+    <form>
+        식 <input type="text" id="exp" value=""><br>
+        값 <input type="text" id="result" readonly >
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .biggerImage{
+            background-image: url('c:/Users/boy-1/OneDrive/바탕 화면/images/banana.jpeg'); /* 이미지 상대 경로 */
+            background-size: cover;
+            background-position: center;
+            width: 400px;
+            height: 300px;
+            transition: background-image 0.3s;
+        }
+
+        .biggerImage:hover{
+           transform: scale(2,2);
+        }
+    </style>
+</head>
+<body>
+    <div class="biggerImage"></div>
+</body>
+</html>

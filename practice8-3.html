@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showWord(){
+            let spanArray = document.getElementsByTagName("span");
+            for(let i=0; i<spanArray.length; i++){
+                let span = spanArray[i];
+                if(span.style.visibility === "hidden"){
+                    span.style.visibility = "visible";  // 보이게 하기
+                } 
+                else {
+                    span.style.visibility = "hidden";   // 숨기기
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>빈 곳에 숨은 단어 
+        <button onclick = "showWord()">show/hide</button>
+    </h3>
+
+    <hr>
+    <ul>
+        <li>I (<span>love</span>) you</li>
+        <li>Css is Casading (<span>Style</span>)</li>
+        <li>응답하라 (<span>1988</span>)</li>
+    </ul>
+</body>
+</html>
